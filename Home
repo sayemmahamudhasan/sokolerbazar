@@ -1,0 +1,1618 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title> সকলের বাজার ডট কম | Ready to Cook</title>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap');
+
+:root{
+    --green:#075b43;
+    --dark-green:#034333;
+    --light-green:#e9f7ee;
+    --lime:#a9d94c;
+    --orange:#ff8a00;
+    --yellow:#ffc928;
+    --cream:#fffdf5;
+    --white:#ffffff;
+    --text:#17352c;
+    --muted:#6c7c76;
+    --shadow:0 12px 35px rgba(3,67,51,.10);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Hind Siliguri','Poppins',sans-serif;
+    background:#f8fbf7;
+    color:var(--text);
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(255,255,255,.94);
+    backdrop-filter:blur(15px);
+    border-bottom:1px solid #e7eee9;
+}
+
+.nav-container{
+    max-width:1200px;
+    margin:auto;
+    height:76px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 20px;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    text-decoration:none;
+}
+
+.logo img{
+    width:58px;
+    height:58px;
+    object-fit:contain;
+}
+
+.logo-text{
+    font-size:21px;
+    font-weight:800;
+    color:var(--green);
+    line-height:1.1;
+}
+
+.logo-text span{
+    display:block;
+    font-size:12px;
+    color:var(--orange);
+    font-family:Poppins,sans-serif;
+}
+
+.nav-links{
+    display:flex;
+    gap:28px;
+    list-style:none;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:#27453c;
+    font-weight:600;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:var(--orange);
+}
+
+.nav-actions{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.search-btn,
+.cart-btn{
+    border:none;
+    background:var(--light-green);
+    width:43px;
+    height:43px;
+    border-radius:50%;
+    cursor:pointer;
+    font-size:20px;
+    position:relative;
+}
+
+.cart-count{
+    position:absolute;
+    right:-4px;
+    top:-4px;
+    background:var(--orange);
+    color:white;
+    width:20px;
+    height:20px;
+    border-radius:50%;
+    font-size:12px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family:Poppins;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    max-width:1200px;
+    margin:25px auto;
+    padding:0 20px;
+}
+
+.hero-box{
+    min-height:480px;
+    border-radius:35px;
+    overflow:hidden;
+    position:relative;
+    display:grid;
+    grid-template-columns:1.05fr .95fr;
+    background:
+        radial-gradient(circle at 85% 25%,#eaffb4 0,transparent 24%),
+        linear-gradient(120deg,#075b43,#08704e);
+    box-shadow:var(--shadow);
+}
+
+.hero-content{
+    padding:70px 55px;
+    position:relative;
+    z-index:2;
+}
+
+.hero-tag{
+    display:inline-flex;
+    align-items:center;
+    gap:7px;
+    background:#ffffff1c;
+    border:1px solid #ffffff3a;
+    color:#eaffb4;
+    padding:8px 15px;
+    border-radius:50px;
+    font-size:14px;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    color:white;
+    font-size:52px;
+    line-height:1.12;
+    max-width:580px;
+    margin-bottom:18px;
+    font-weight:800;
+}
+
+.hero h1 span{
+    color:#ffd447;
+}
+
+.hero p{
+    color:#e1f2e9;
+    font-size:18px;
+    max-width:520px;
+    line-height:1.7;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:14px;
+    margin-top:30px;
+}
+
+.btn{
+    padding:14px 24px;
+    border-radius:50px;
+    border:none;
+    cursor:pointer;
+    text-decoration:none;
+    font-weight:700;
+    font-size:15px;
+    transition:.3s;
+    display:inline-block;
+}
+
+.btn-primary{
+    background:var(--orange);
+    color:white;
+    box-shadow:0 8px 20px #ff8a0050;
+}
+
+.btn-primary:hover{
+    transform:translateY(-3px);
+}
+
+.btn-light{
+    background:white;
+    color:var(--green);
+}
+
+.hero-image{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+}
+
+.hero-food{
+    width:410px;
+    height:410px;
+    border-radius:50%;
+    background:
+        linear-gradient(145deg,#ffffff,#eef8e9);
+    box-shadow:0 30px 60px #003e2d50;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:145px;
+    animation:float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+    0%,100%{transform:translateY(0)}
+    50%{transform:translateY(-12px)}
+}
+
+.float-card{
+    position:absolute;
+    background:white;
+    padding:13px 17px;
+    border-radius:15px;
+    box-shadow:var(--shadow);
+    font-weight:700;
+    color:var(--green);
+}
+
+.card-one{
+    top:75px;
+    right:25px;
+}
+
+.card-two{
+    bottom:80px;
+    left:20px;
+}
+
+/* ================= CATEGORY ================= */
+
+.section{
+    max-width:1200px;
+    margin:70px auto;
+    padding:0 20px;
+}
+
+.section-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:end;
+    margin-bottom:25px;
+}
+
+.section-head h2{
+    font-size:32px;
+    color:var(--dark-green);
+}
+
+.section-head p{
+    color:var(--muted);
+}
+
+.categories{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:18px;
+}
+
+.category{
+    background:white;
+    border-radius:22px;
+    padding:25px 15px;
+    text-align:center;
+    cursor:pointer;
+    border:1px solid #edf2ef;
+    transition:.3s;
+}
+
+.category:hover{
+    transform:translateY(-7px);
+    box-shadow:var(--shadow);
+    border-color:#d4e9dc;
+}
+
+.category-icon{
+    width:75px;
+    height:75px;
+    margin:auto;
+    background:var(--light-green);
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:40px;
+    margin-bottom:12px;
+}
+
+.category h3{
+    font-size:17px;
+}
+
+/* ================= PRODUCTS ================= */
+
+.products{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:22px;
+}
+
+.product{
+    background:white;
+    border-radius:24px;
+    overflow:hidden;
+    border:1px solid #edf2ef;
+    transition:.35s;
+    position:relative;
+}
+
+.product:hover{
+    transform:translateY(-7px);
+    box-shadow:var(--shadow);
+}
+
+.product-image{
+    height:210px;
+    background:linear-gradient(145deg,#eff9ee,#fff8e8);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:90px;
+    position:relative;
+}
+
+.badge{
+    position:absolute;
+    left:13px;
+    top:13px;
+    background:var(--orange);
+    color:white;
+    padding:5px 10px;
+    border-radius:20px;
+    font-size:12px;
+    font-family:Poppins;
+    font-weight:600;
+}
+
+.product-info{
+    padding:18px;
+}
+
+.product-category{
+    font-size:12px;
+    color:#7b9087;
+}
+
+.product h3{
+    font-size:19px;
+    margin:5px 0;
+}
+
+.product-meta{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-top:12px;
+}
+
+.price{
+    color:var(--green);
+    font-family:Poppins;
+    font-size:20px;
+    font-weight:800;
+}
+
+.old-price{
+    font-size:12px;
+    color:#9ba9a4;
+    text-decoration:line-through;
+    margin-left:5px;
+}
+
+.add-btn{
+    width:40px;
+    height:40px;
+    border:none;
+    border-radius:50%;
+    background:var(--green);
+    color:white;
+    font-size:23px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.add-btn:hover{
+    background:var(--orange);
+    transform:rotate(10deg);
+}
+
+/* ================= OFFER ================= */
+
+.offer{
+    max-width:1200px;
+    margin:80px auto;
+    padding:0 20px;
+}
+
+.offer-box{
+    border-radius:30px;
+    overflow:hidden;
+    padding:45px;
+    background:
+        radial-gradient(circle at 90% 50%,#ffd95c 0,transparent 25%),
+        linear-gradient(110deg,#ff8a00,#ffb52e);
+    color:white;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.offer h2{
+    font-size:38px;
+}
+
+.offer p{
+    font-size:17px;
+    margin-top:7px;
+}
+
+.offer-btn{
+    background:white;
+    color:#e76d00;
+}
+
+/* ================= WHY US ================= */
+
+.features{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.feature{
+    background:white;
+    padding:28px;
+    border-radius:22px;
+    border:1px solid #edf2ef;
+}
+
+.feature-icon{
+    font-size:35px;
+    margin-bottom:12px;
+}
+
+.feature h3{
+    margin-bottom:5px;
+}
+
+.feature p{
+    color:var(--muted);
+    font-size:14px;
+    line-height:1.6;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    background:#033d2e;
+    color:white;
+    margin-top:80px;
+    padding:50px 20px 25px;
+}
+
+.footer-inner{
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr 1fr;
+    gap:40px;
+}
+
+footer h3{
+    margin-bottom:15px;
+}
+
+footer p,
+footer li{
+    color:#c9dfd6;
+    font-size:14px;
+    line-height:1.8;
+}
+
+footer ul{
+    list-style:none;
+}
+
+.footer-bottom{
+    max-width:1200px;
+    margin:35px auto 0;
+    padding-top:20px;
+    border-top:1px solid #ffffff20;
+    text-align:center;
+    color:#a9c5bb;
+    font-size:13px;
+}
+
+/* ================= CART ================= */
+
+.cart-panel{
+    position:fixed;
+    top:0;
+    right:-400px;
+    width:380px;
+    max-width:90%;
+    height:100vh;
+    background:white;
+    z-index:2000;
+    box-shadow:-10px 0 40px #0002;
+    padding:25px;
+    transition:.4s;
+}
+
+.cart-panel.active{
+    right:0;
+}
+
+.cart-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:1px solid #eee;
+    padding-bottom:18px;
+}
+
+.close-cart{
+    border:none;
+    background:#f1f5f2;
+    width:35px;
+    height:35px;
+    border-radius:50%;
+    cursor:pointer;
+}
+
+.cart-items{
+    margin-top:20px;
+}
+
+.cart-empty{
+    text-align:center;
+    color:#82928b;
+    margin-top:70px;
+}
+
+.overlay{
+    position:fixed;
+    inset:0;
+    background:#0005;
+    z-index:1500;
+    display:none;
+}
+
+.overlay.active{
+    display:block;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:900px){
+
+    .nav-links{
+        display:none;
+    }
+
+    .hero-box{
+        grid-template-columns:1fr;
+    }
+
+    .hero-content{
+        padding:45px 30px;
+    }
+
+    .hero h1{
+        font-size:39px;
+    }
+
+    .hero-image{
+        padding-bottom:45px;
+    }
+
+    .hero-food{
+        width:260px;
+        height:260px;
+        font-size:90px;
+    }
+
+    .categories{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+    .products{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .features{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .footer-inner{
+        grid-template-columns:1fr 1fr;
+    }
+
+}
+
+@media(max-width:550px){
+
+    .logo-text{
+        font-size:16px;
+    }
+
+    .logo img{
+        width:48px;
+        height:48px;
+    }
+
+    .hero{
+        margin-top:12px;
+    }
+
+    .hero-box{
+        border-radius:25px;
+    }
+
+    .hero h1{
+        font-size:32px;
+    }
+
+    .hero p{
+        font-size:15px;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+    }
+
+    .categories{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .products{
+        grid-template-columns:1fr 1fr;
+        gap:12px;
+    }
+
+    .product-image{
+        height:150px;
+        font-size:65px;
+    }
+
+    .product-info{
+        padding:12px;
+    }
+
+    .product h3{
+        font-size:15px;
+    }
+
+    .price{
+        font-size:16px;
+    }
+
+    .offer-box{
+        padding:30px 25px;
+        display:block;
+    }
+
+    .offer h2{
+        font-size:28px;
+    }
+
+    .offer-btn{
+        margin-top:20px;
+    }
+
+    .features{
+        grid-template-columns:1fr;
+    }
+
+    .footer-inner{
+        grid-template-columns:1fr;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar">
+
+<div class="nav-container">
+
+<a href="#" class="logo">
+
+<img src="logo.png" alt="আমাদের বাজার">
+
+<div class="logo-text">
+আমাদের বাজার
+<span>ডট কম</span>
+</div>
+
+</a>
+
+<ul class="nav-links">
+<li><a href="#">হোম</a></li>
+<li><a href="#categories">ক্যাটাগরি</a></li>
+<li><a href="#products">পণ্য</a></li>
+<li><a href="#offers">অফার</a></li>
+<li><a href="#about">আমাদের সম্পর্কে</a></li>
+</ul>
+
+<div class="nav-actions">
+
+<button class="search-btn">⌕</button>
+
+<button class="cart-btn" onclick="openCart()">
+🛒
+<span class="cart-count" id="cartCount">0</span>
+</button>
+
+</div>
+
+</div>
+
+</nav>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+<div class="hero-box">
+
+<div class="hero-content">
+
+<div class="hero-tag">
+🌿 ১০০% Fresh • Hygienic • Ready to Cook
+</div>
+
+<h1>
+রান্নার প্রস্তুতি নয়,
+<br>
+<strong>শুধু রান্না করুন!</strong>
+</h1>
+
+<p>
+তাজা মাছ, মাংস ও সবজি—
+পরিষ্কার, কাটা এবং রান্নার জন্য প্রস্তুত।
+আপনার সময় বাঁচাতে আমাদের Ready-to-Cook সমাধান।
+</p>
+
+<div class="hero-buttons">
+
+<a href="#products" class="btn btn-primary">
+🛒 এখনই অর্ডার করুন
+</a>
+
+<a href="#categories" class="btn btn-light">
+ক্যাটাগরি দেখুন
+</a>
+
+</div>
+
+</div>
+
+
+<div class="hero-image">
+
+<div class="hero-food">
+🥘
+</div>
+
+<div class="float-card card-one">
+✨ Fresh & Clean
+</div>
+
+<div class="float-card card-two">
+⚡ Ready to Cook
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= CATEGORIES ================= -->
+
+<section class="section" id="categories">
+
+<div class="section-head">
+
+<div>
+<h2>কী কিনতে চান?</h2>
+<p>আপনার প্রয়োজন অনুযায়ী পণ্য বেছে নিন</p>
+</div>
+
+</div>
+
+
+<div class="categories">
+
+<div class="category">
+<div class="category-icon">🐟</div>
+<h3>মাছ</h3>
+</div>
+
+<div class="category">
+<div class="category-icon">🥩</div>
+<h3>মাংস</h3>
+</div>
+
+<div class="category">
+<div class="category-icon">🥦</div>
+<h3>সবজি</h3>
+</div>
+
+<div class="category">
+<div class="category-icon">🍱</div>
+<h3>কম্বো প্যাক</h3>
+</div>
+
+<div class="category">
+<div class="category-icon">🔥</div>
+<h3>স্পেশাল অফার</h3>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= PRODUCTS ================= -->
+
+<section class="section" id="products">
+
+<div class="section-head">
+
+<div>
+<h2>জনপ্রিয় Ready-to-Cook</h2>
+<p>আজকের fresh selection</p>
+</div>
+
+</div>
+
+
+<div class="products">
+
+
+<!-- PRODUCT 1 -->
+
+<div class="product">
+
+<div class="product-image">
+
+<span class="badge">-10%</span>
+
+🐟
+
+</div>
+
+<div class="product-info">
+
+<span class="product-category">
+মাছ
+</span>
+
+<h3>কাটা রুই মাছ</h3>
+
+<p>পরিষ্কার ও রান্নার জন্য প্রস্তুত</p>
+
+<div class="product-meta">
+
+<div class="price">
+৳ ২৭০
+<span class="old-price">৳ ৩০০</span>
+</div>
+
+<button class="add-btn"
+onclick="addToCart('কাটা রুই মাছ',270)">
++
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- PRODUCT 2 -->
+
+<div class="product">
+
+<div class="product-image">
+
+<span class="badge">Fresh</span>
+
+🍗
+
+</div>
+
+<div class="product-info">
+
+<span class="product-category">
+মাংস
+</span>
+
+<h3>Chicken Curry Cut</h3>
+
+<p>পরিষ্কার ও curry cut</p>
+
+<div class="product-meta">
+
+<div class="price">
+৳ ৩৪০
+</div>
+
+<button class="add-btn"
+onclick="addToCart('Chicken Curry Cut',340)">
++
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- PRODUCT 3 -->
+
+<div class="product">
+
+<div class="product-image">
+
+<span class="badge">Popular</span>
+
+🥦
+
+</div>
+
+<div class="product-info">
+
+<span class="product-category">
+সবজি
+</span>
+
+<h3>Mixed Vegetable Pack</h3>
+
+<p>Fresh mixed vegetables</p>
+
+<div class="product-meta">
+
+<div class="price">
+৳ ১৮০
+</div>
+
+<button class="add-btn"
+onclick="addToCart('Mixed Vegetable Pack',180)">
++
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- PRODUCT 4 -->
+
+<div class="product">
+
+<div class="product-image">
+
+<span class="badge">Combo</span>
+
+🍱
+
+</div>
+
+<div class="product-info">
+
+<span class="product-category">
+কম্বো
+</span>
+
+<h3>Family Cooking Combo</h3>
+
+<p>মাছ + মাংস + সবজি</p>
+
+<div class="product-meta">
+
+<div class="price">
+৳ ৭৫০
+</div>
+
+<button class="add-btn"
+onclick="addToCart('Family Cooking Combo',750)">
++
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- PRODUCT 5 -->
+
+<div class="product">
+
+<div class="product-image">
+
+🍤
+
+</div>
+
+<div class="product-info">
+
+<span class="product-category">
+মাছ
+</span>
+
+<h3>Cleaned Prawn</h3>
+
+<p>Cleaned & ready to cook</p>
+
+<div class="product-meta">
+
+<div class="price">
+৳ ৪৮০
+</div>
+
+<button class="add-btn"
+onclick="addToCart('Cleaned Prawn',480)">
++
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- PRODUCT 6 -->
+
+<div class="product">
+
+<div class="product-image">
+
+🥩
+
+</div>
+
+<div class="product-info">
+
+<span class="product-category">
+মাংস
+</span>
+
+<h3>Beef Curry Cut</h3>
+
+<p>Fresh beef curry cut</p>
+
+<div class="product-meta">
+
+<div class="price">
+৳ ৬৫০
+</div>
+
+<button class="add-btn"
+onclick="addToCart('Beef Curry Cut',650)">
++
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- PRODUCT 7 -->
+
+<div class="product">
+
+<div class="product-image">
+
+🥕
+</div>
+
+<div class="product-info">
+
+<span class="product-category">
+সবজি
+</span>
+
+<h3>Fresh Vegetable Mix</h3>
+
+<p>Daily fresh vegetables</p>
+
+<div class="product-meta">
+
+<div class="price">
+৳ ১৫০
+</div>
+
+<button class="add-btn"
+onclick="addToCart('Fresh Vegetable Mix',150)">
++
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- PRODUCT 8 -->
+
+<div class="product">
+
+<div class="product-image">
+
+🍲
+
+</div>
+
+<div class="product-info">
+
+<span class="product-category">
+Ready Meal
+</span>
+
+<h3>Cooking Starter Pack</h3>
+
+<p>সবকিছু এক প্যাকেটে</p>
+
+<div class="product-meta">
+
+<div class="price">
+৳ ৫৫০
+</div>
+
+<button class="add-btn"
+onclick="addToCart('Cooking Starter Pack',550)">
++
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- ================= OFFER ================= -->
+
+<section class="offer" id="offers">
+
+<div class="offer-box">
+
+<div>
+
+<h2>আজকের বিশেষ অফার 🎉</h2>
+
+<p>
+৳১০০০+ অর্ডারে বিশেষ ডিসকাউন্ট!
+</p>
+
+</div>
+
+<a href="#products" class="btn offer-btn">
+অফার দেখুন →
+</a>
+
+</div>
+
+</section>
+
+
+<!-- ================= WHY US ================= -->
+
+<section class="section" id="about">
+
+<div class="section-head">
+
+<div>
+
+<h2>কেন আমাদের বাজার?</h2>
+
+<p>
+Freshness থেকে delivery—সবকিছুতে যত্ন
+</p>
+
+</div>
+
+</div>
+
+
+<div class="features">
+
+<div class="feature">
+
+<div class="feature-icon">
+🌿
+</div>
+
+<h3>Fresh Products</h3>
+
+<p>
+প্রতিদিনের fresh মাছ, মাংস ও সবজি।
+</p>
+
+</div>
+
+
+<div class="feature">
+
+<div class="feature-icon">
+🧼
+</div>
+
+<h3>Clean & Hygienic</h3>
+
+<p>
+পরিষ্কার ও স্বাস্থ্যসম্মতভাবে প্রস্তুত।
+</p>
+
+</div>
+
+
+<div class="feature">
+
+<div class="feature-icon">
+⚡
+</div>
+
+<h3>Ready to Cook</h3>
+
+<p>
+কাটাকাটি ও প্রস্তুতির ঝামেলা কম।
+</p>
+
+</div>
+
+
+<div class="feature">
+
+<div class="feature-icon">
+🚚
+</div>
+
+<h3>Fast Delivery</h3>
+
+<p>
+আপনার দরজায় দ্রুত পৌঁছে দেওয়ার ব্যবস্থা।
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<div class="footer-inner">
+
+<div>
+
+<h3>আমাদের বাজার ডট কম</h3>
+
+<p>
+Fresh food. Easy cooking.
+<br>
+আপনার রান্নাঘরের trusted Ready-to-Cook partner.
+</p>
+
+</div>
+
+
+<div>
+
+<h3>Quick Links</h3>
+
+<ul>
+
+<li>হোম</li>
+<li>পণ্য</li>
+<li>ক্যাটাগরি</li>
+<li>অফার</li>
+
+</ul>
+
+</div>
+
+
+<div>
+
+<h3>Categories</h3>
+
+<ul>
+
+<li>মাছ</li>
+<li>মাংস</li>
+<li>সবজি</li>
+<li>কম্বো প্যাক</li>
+
+</ul>
+
+</div>
+
+
+<div>
+
+<h3>যোগাযোগ</h3>
+
+<p>
+📞 01XXXXXXXXX
+</p>
+
+<p>
+📍 Bangladesh
+</p>
+
+<p>
+✉️ info@amaderbazar.com
+</p>
+
+</div>
+
+</div>
+
+
+<div class="footer-bottom">
+
+© 2026 আমাদের বাজার ডট কম — All Rights Reserved.
+
+</div>
+
+</footer>
+
+
+<!-- ================= CART ================= -->
+
+<div class="overlay" id="overlay" onclick="closeCart()"></div>
+
+
+<div class="cart-panel" id="cartPanel">
+
+<div class="cart-header">
+
+<h2>🛒 আপনার Cart</h2>
+
+<button class="close-cart" onclick="closeCart()">
+✕
+</button>
+
+</div>
+
+<div class="cart-items" id="cartItems">
+
+<div class="cart-empty">
+
+🛒<br><br>
+আপনার cart এখনো খালি।
+
+</div>
+
+</div>
+
+</div>
+
+
+<script>
+
+let cart = [];
+
+function addToCart(name,price){
+
+    cart.push({
+        name:name,
+        price:price
+    });
+
+    document.getElementById("cartCount").innerText = cart.length;
+
+    updateCart();
+
+    openCart();
+}
+
+
+function updateCart(){
+
+    const cartItems = document.getElementById("cartItems");
+
+    if(cart.length === 0){
+
+        cartItems.innerHTML = `
+        <div class="cart-empty">
+        🛒<br><br>
+        আপনার cart এখনো খালি।
+        </div>
+        `;
+
+        return;
+    }
+
+    let total = 0;
+
+    let html = "";
+
+    cart.forEach((item,index)=>{
+
+        total += item.price;
+
+        html += `
+        <div style="
+        padding:15px 0;
+        border-bottom:1px solid #eee;
+        display:flex;
+        justify-content:space-between;
+        gap:10px;
+        ">
+
+        <div>
+        <strong>${item.name}</strong>
+        <br>
+        <span style="color:#075b43">
+        ৳ ${item.price}
+        </span>
+        </div>
+
+        <button
+        onclick="removeItem(${index})"
+        style="
+        border:none;
+        background:#ffecec;
+        color:#d33;
+        width:30px;
+        height:30px;
+        border-radius:50%;
+        cursor:pointer;
+        ">
+        ×
+        </button>
+
+        </div>
+        `;
+
+    });
+
+
+    html += `
+
+    <div style="
+    margin-top:25px;
+    padding-top:20px;
+    border-top:2px solid #075b43;
+    ">
+
+    <div style="
+    display:flex;
+    justify-content:space-between;
+    font-size:20px;
+    font-weight:800;
+    ">
+
+    <span>Total</span>
+
+    <span style="color:#075b43">
+    ৳ ${total}
+    </span>
+
+    </div>
+
+    <button
+    onclick="checkout()"
+    style="
+    width:100%;
+    margin-top:18px;
+    padding:14px;
+    border:none;
+    border-radius:30px;
+    background:#ff8a00;
+    color:white;
+    font-weight:700;
+    cursor:pointer;
+    ">
+
+    Checkout →
+    
+    </button>
+
+    </div>
+
+    `;
+
+    cartItems.innerHTML = html;
+
+}
+
+
+function removeItem(index){
+
+    cart.splice(index,1);
+
+    document.getElementById("cartCount").innerText = cart.length;
+
+    updateCart();
+
+}
+
+
+function openCart(){
+
+    document.getElementById("cartPanel")
+    .classList.add("active");
+
+    document.getElementById("overlay")
+    .classList.add("active");
+
+}
+
+
+function closeCart(){
+
+    document.getElementById("cartPanel")
+    .classList.remove("active");
+
+    document.getElementById("overlay")
+    .classList.remove("active");
+
+}
+
+
+function checkout(){
+
+    alert(
+    "Checkout system will be connected here.\n\n" +
+    "Next step: WhatsApp / bKash / Nagad / Online Payment integration."
+    );
+
+}
+
+</script>
+
+</body>
+</html>
